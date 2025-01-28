@@ -1,3 +1,68 @@
+# Virtualized Infinite Scroll Implementation
+
+This project implements a bidirectional infinite scroll using React Window virtualization. The implementation maintains a sliding window of 30 items (10 previous, 10 current, 10 next) to optimize memory usage and performance.
+
+## Key Features
+
+- **React Window Virtualization**: Only renders visible items in the DOM
+- **Bidirectional Scrolling**: Load more items when scrolling up or down
+- **Memory Optimization**: Maintains only 30 items in memory
+- **Debounced Scroll Handling**: Prevents excessive API calls
+- **Debug Panel**: Shows current state for development
+
+## Implementation Details
+
+### Core Components
+
+
+### Data Management
+- Maintains a sliding window of 30 items
+- Removes oldest 10 items when loading new ones
+- Updates skip value to track pagination
+
+### Scroll Detection
+- Triggers load when scrolling near top/bottom
+- Uses debounced scroll handler
+- Maintains scroll position during updates
+
+## Advantages and Limitations
+
+### Pros ✅
+
+1. **Performance**
+   - Virtualized rendering minimizes DOM elements
+   - Efficient memory usage with sliding window
+   - Smooth scrolling experience
+
+2. **User Experience**
+   - Seamless infinite scroll in both directions
+   - Minimal layout shift during loading
+   - Responsive to user interactions
+
+3. **Development**
+   - Clean and maintainable code structure
+   - Easy to debug with debug panel
+   - Modular component design
+
+### Cons ❌
+
+1. **Technical Limitations**
+   - Fixed window size of 30 items
+   - Potential data loss during rapid scrolling
+   - No data persistence between sessions
+
+2. **Edge Cases**
+   - Limited error handling
+   - No retry mechanism for failed requests
+   - Scroll position might jump in certain conditions
+
+3. **User Experience Gaps**
+   - Limited feedback during errors
+   - No loading indicators for individual items
+   - No way to jump to specific positions
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,67 +134,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-# Virtualized Infinite Scroll Implementation
-
-This project implements a bidirectional infinite scroll using React Window virtualization. The implementation maintains a sliding window of 30 items (10 previous, 10 current, 10 next) to optimize memory usage and performance.
-
-## Key Features
-
-- **React Window Virtualization**: Only renders visible items in the DOM
-- **Bidirectional Scrolling**: Load more items when scrolling up or down
-- **Memory Optimization**: Maintains only 30 items in memory
-- **Debounced Scroll Handling**: Prevents excessive API calls
-- **Debug Panel**: Shows current state for development
-
-## Implementation Details
-
-### Core Components
-
-
-### Data Management
-- Maintains a sliding window of 30 items
-- Removes oldest 10 items when loading new ones
-- Updates skip value to track pagination
-
-### Scroll Detection
-- Triggers load when scrolling near top/bottom
-- Uses debounced scroll handler
-- Maintains scroll position during updates
-
-## Advantages and Limitations
-
-### Pros ✅
-
-1. **Performance**
-   - Virtualized rendering minimizes DOM elements
-   - Efficient memory usage with sliding window
-   - Smooth scrolling experience
-
-2. **User Experience**
-   - Seamless infinite scroll in both directions
-   - Minimal layout shift during loading
-   - Responsive to user interactions
-
-3. **Development**
-   - Clean and maintainable code structure
-   - Easy to debug with debug panel
-   - Modular component design
-
-### Cons ❌
-
-1. **Technical Limitations**
-   - Fixed window size of 30 items
-   - Potential data loss during rapid scrolling
-   - No data persistence between sessions
-
-2. **Edge Cases**
-   - Limited error handling
-   - No retry mechanism for failed requests
-   - Scroll position might jump in certain conditions
-
-3. **User Experience Gaps**
-   - Limited feedback during errors
-   - No loading indicators for individual items
-   - No way to jump to specific positions
 
 

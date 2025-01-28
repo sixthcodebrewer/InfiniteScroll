@@ -2,6 +2,9 @@
 
 This project implements a bidirectional infinite scroll using React Window virtualization. The implementation maintains a sliding window of 30 items (10 previous, 10 current, 10 next) to optimize memory usage and performance.
 
+## link
+[https://scrollforthink41.netlify.app/](https://scrollforthink41.netlify.app/)
+
 ## Key Features
 
 - **React Window Virtualization**: Only renders visible items in the DOM

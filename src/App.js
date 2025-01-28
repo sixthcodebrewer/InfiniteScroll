@@ -48,7 +48,7 @@ function App() {
     } finally {
       setLoading(false);
     }
-  }, [skip, loading, hasMore, hasMorePrev]);
+  }, [skip, loading, hasMore, hasMorePrev, ITEMS_PER_PAGE]);
 
   // Initial load
   useEffect(() => {
@@ -140,44 +140,6 @@ function App() {
           </tbody>
         </table>
 
-        {/* Pros and Cons Table
-        <h3>Implementation Analysis:</h3>
-        <table style={{ 
-          margin: '20px auto', 
-          borderCollapse: 'collapse', 
-          width: '100%',
-          maxWidth: '800px',
-          border: '1px solid #ddd'
-        }}>
-          <thead>
-            <tr style={{ backgroundColor: '#f5f5f5' }}>
-              <th style={{ padding: '12px', borderBottom: '2px solid #ddd', width: '50%' }}>Pros</th>
-              <th style={{ padding: '12px', borderBottom: '2px solid #ddd', width: '50%' }}>Cons</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={{ padding: '12px', borderBottom: '1px solid #ddd', verticalAlign: 'top' }}>
-                <ul style={{ margin: 0, paddingLeft: '20px' }}>
-                  <li>Virtualized rendering for optimal performance</li>
-                  <li>Bidirectional infinite scroll</li>
-                  <li>Memory efficient (30 items max)</li>
-                  <li>Debounced scroll handling</li>
-                  <li>Clean and maintainable code structure</li>
-                </ul>
-              </td>
-              <td style={{ padding: '12px', borderBottom: '1px solid #ddd', verticalAlign: 'top' }}>
-                <ul style={{ margin: 0, paddingLeft: '20px' }}>
-                  <li>Limited window size (only 30 items)</li>
-                  <li>Potential data loss when scrolling too fast</li>
-                  <li>No data persistence between sessions</li>
-                  <li>No error retry mechanism</li>
-                  <li>Limited error handling feedback to user</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table> */}
       </div>
     </div>
   );
